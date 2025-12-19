@@ -7,11 +7,12 @@
         <RouterLink :to="{ name: 'home' }" class="text-sm font-semibold text-neutral-900">Jobportal</RouterLink>
 
         <!-- Navigation -->
-        <nav class="flex items-center gap-6 text-sm">
+        <nav v-if="authReady" class="flex items-center gap-6 text-sm">
           <RouterLink :to="{ name: 'jobs' }" class="text-neutral-600 hover:text-neutral-900 transition">Jobs
           </RouterLink>
 
-          <RouterLink :to="{ name: 'login' }" v-if="!isAuthenticated" class="text-neutral-600 hover:text-neutral-900 transition">Login
+          <RouterLink :to="{ name: 'login' }" v-if="!isAuthenticated"
+            class="text-neutral-600 hover:text-neutral-900 transition">Login
           </RouterLink>
 
           <RouterLink :to="{ name: 'register' }" v-if="!isAuthenticated" class="inline-flex items-center justify-center rounded-lg
@@ -45,6 +46,9 @@ export default {
     },
     isAuthenticated() {
       return this.authStore.isAuthenticated;
+    },
+    authReady() {
+      return this.authStore.authReady;
     },
   },
   methods: {
