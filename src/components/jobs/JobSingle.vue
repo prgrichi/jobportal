@@ -1,40 +1,43 @@
 <template>
-  <article class="group rounded-2xl bg-gray-50 p-5 ring-1 ring-gray-200
-           transition hover:bg-white hover:shadow-sm">
-    <!-- Title -->
-    <h3 class="text-[15px] font-semibold leading-snug text-gray-900">
-      {{ job.title }}
-    </h3>
+  <article class="group rounded-2xl border border-neutral-200 bg-white p-5 transition
+           hover:-translate-y-0.5 hover:shadow-lg hover:border-primary-500/30">
+    <!-- Header -->
+    <div class="flex items-start justify-between gap-3">
+      <div>
+        <h3 class="text-sm font-semibold text-neutral-900">
+          {{ job.title }}
+        </h3>
 
-    <!-- Company / Location -->
-    <p class="mt-1 text-sm text-gray-600">
-      <span class="font-medium text-gray-800">{{ job.company }}</span>
-      <span class="text-gray-400"> · </span>
-      <span>{{ job.location }}</span>
-    </p>
+        <p class="mt-1 text-sm text-neutral-600">
+          <span class="font-medium text-neutral-800">{{ job.company }}</span>
+          <span class="text-neutral-400"> · </span>
+          <span>{{ job.location }}</span>
+        </p>
+      </div>
+
+      <!-- Optional Badge -->
+      <span v-if="job.isNew" class="shrink-0 rounded-full bg-accent-500/70 px-2.5 py-1 text-xs font-medium text-white">
+        Neu
+      </span>
+    </div>
 
     <!-- Tags -->
     <div v-if="job.tags?.length" class="mt-4 flex flex-wrap gap-2">
-      <span v-for="tag in job.tags.slice(0, 6)" :key="tag" class="rounded-full bg-white px-3 py-1
-               text-xs font-medium text-gray-700
-               ring-1 ring-inset ring-gray-300">
+      <span v-for="tag in job.tags.slice(0, 6)" :key="tag"
+        class="rounded-full bg-neutral-100 px-2.5 py-1 text-xs text-neutral-600">
         {{ tag }}
       </span>
     </div>
 
     <!-- Footer -->
     <div class="mt-4 flex items-center justify-between">
-      <!-- Salary -->
-      <span v-if="job.salaryRange" class="text-sm font-medium text-gray-900">
+      <p v-if="job.salaryRange" class="text-sm font-medium text-neutral-900">
         {{ job.salaryRange }}
-      </span>
+      </p>
 
-      <!-- Link hint -->
-      <span class="inline-flex items-center gap-1 text-xs font-medium
-               text-gray-500 transition
-               group-hover:text-gray-900">
-        Details
-        <span class="transition group-hover:translate-x-0.5">→</span>
+      <span
+        class="inline-flex items-center gap-1 text-sm font-medium text-accent-500 transition group-hover:text-accent-600">
+        Details <span aria-hidden="true">→</span>
       </span>
     </div>
   </article>

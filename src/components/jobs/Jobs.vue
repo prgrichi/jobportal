@@ -11,6 +11,12 @@
       </RouterLink>
     </template>
 
+    <template v-if="error">
+      <div class="col-span-full text-center text-red-500">
+        {{ error }}
+      </div>
+    </template>
+
   </div>
 </template>
 
@@ -24,16 +30,14 @@ export default {
     JobSingle,
     JobSkeletonCard
   },
-  // data() {
-  //   return {
-  //     // jobs: [],
-  //     isLoading: true
-  //   }
-  // },
   props: {
     jobs: {
       type: Array,
       required: true
+    },
+    error: {
+      type: String,
+      default: null
     },
     isLoading: {
       type: Boolean,
