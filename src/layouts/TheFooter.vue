@@ -17,11 +17,15 @@
 
         <!-- Navigation -->
         <nav class="flex gap-6 text-sm">
-          <RouterLink :to="{ name: 'home' }" class="text-neutral-600 hover:text-primary-600 transition">Start</RouterLink>
+          <RouterLink :to="{ name: 'home' }" class="text-neutral-600 hover:text-primary-600 transition">Start
+          </RouterLink>
 
-          <RouterLink :to="{ name: 'login' }" class="text-neutral-600 hover:text-primary-600 transition">Login</RouterLink>
+          <RouterLink v-if="!isAuthenticated" :to="{ name: 'login' }"
+            class="text-neutral-600 hover:text-primary-600 transition">Login
+          </RouterLink>
 
-          <RouterLink :to="{ name: 'jobs' }" class="text-neutral-600 hover:text-primary-600 transition">Jobs</RouterLink>
+          <RouterLink :to="{ name: 'jobs' }" class="text-neutral-600 hover:text-primary-600 transition">Jobs
+          </RouterLink>
 
           <a href="https://github.com/prgrichi" rel="noopener noreferrer" target="_blank"
             class="text-neutral-600 hover:text-primary-600 transition">
@@ -41,8 +45,21 @@
 </template>
 
 <script>
+import { useAuthStore } from '@/stores/auth/auth';
+
 export default {
   name: 'TheFooter',
+  computed: {
+    authStore() {
+      return useAuthStore();
+    },
+    isAuthenticated() {
+      return this.authStore.isAuthenticated;
+    },
+    authReady() {
+      return this.authStore.authReady;
+    },
+  },
 }
 </script>
 

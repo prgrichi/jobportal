@@ -16,13 +16,13 @@
       </div>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <template v-if="isLoading">
-          <JobSkeletonCard v-for="n in 3" :key="`sk-${n}`" />
+          <JobSkeleton v-for="n in 3" :key="`sk-${n}`" />
         </template>
+
         <template v-else>
-          <RouterLink v-for="job in jobs" :key="job.id" :to="`/jobs/${job.id}`" class="block">
-            <JobSingle :job="job" />
-          </RouterLink>
+          <JobSingle v-for="job in jobs" :key="job.id" :job="job" />
         </template>
+
         <template v-if="error">
           <div class="col-span-full text-center text-red-500">
             {{ error }}
@@ -47,16 +47,17 @@
 <script>
 import jobsMixin from '@/mixins/jobsMixin';
 import JobSingle from '@/components/jobs/JobSingle.vue';
-import JobSkeletonCard from "@/components/jobs/JobSkeletonCard.vue";
+import JobSkeleton from "@/components/jobs/JobSkeleton.vue";
 
 export default {
-  name: 'JobsTeaserSection',
+  name: 'ThreeJobsTeaser',
   components: {
     JobSingle,
-    JobSkeletonCard
+    JobSkeleton
   },
+  // job in mixins:
   mixins: [jobsMixin],
-  mounted() {
+  created() {
     this.fetchJobs({
       orderBy: { field: 'createdAt', direction: 'desc' },
       limit: 3

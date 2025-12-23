@@ -1,3 +1,29 @@
+# LEARNINGS
+
+User klickt auf Job-Card (ID: "abc123")
+    ↓
+Router navigiert zu /jobs/abc123
+    ↓
+JobDetailPage wird erstellt
+    ↓
+Props werden gesetzt (this.id = "abc123")
+    ↓
+created() wird aufgerufen  ← HIER nutzt du this.id
+    ↓
+API-Call mit this.id
+
+-----
+
+
+1.  Komponente wird erstellt
+2. Template wird gerendert → job = null
+3. created() läuft → API-Call startet
+4. API-Call fertig → job wird gesetzt
+5. Template re-rendert → job. id funktioniert
+
+
+
+
 # jobportal
 
 This template should help get you started developing with Vue 3 in Vite.

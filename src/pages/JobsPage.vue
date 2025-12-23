@@ -16,9 +16,13 @@ export default {
   components: {
     Jobs
   },
+  // job in mixins:
   mixins: [jobsMixin],
-  mounted() {
-    this.fetchJobs();
+  created() {
+    this.fetchJobs({
+      orderBy: { field: 'createdAt', direction: 'desc' },
+      limit: 6
+    });
   }
 }
 </script>

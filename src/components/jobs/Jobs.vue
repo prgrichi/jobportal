@@ -2,13 +2,11 @@
   <div class="mt-6 grid gap-4 grid-cols-1 md:grid-cols-3">
 
     <template v-if="isLoading">
-      <JobSkeletonCard v-for="n in 6" :key="`sk-${n}`" />
+      <JobSkeleton v-for="n in 6" :key="`sk-${n}`" />
     </template>
 
     <template v-else>
-      <RouterLink v-for="job in jobs" :key="job.id" :to="`/jobs/${job.id}`" class="block">
-        <JobSingle :job="job" />
-      </RouterLink>
+      <JobSingle v-for="job in jobs" :key="job.id" :job="job" />
     </template>
 
     <template v-if="error">
@@ -22,13 +20,13 @@
 
 <script>
 import JobSingle from './JobSingle.vue';
-import JobSkeletonCard from "@/components/jobs/JobSkeletonCard.vue";
+import JobSkeleton from './JobSkeleton.vue';
 
 export default {
   name: 'Jobs',
   components: {
     JobSingle,
-    JobSkeletonCard
+    JobSkeleton
   },
   props: {
     jobs: {

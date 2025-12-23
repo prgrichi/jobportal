@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage.vue';
 import JobsPage from '@/pages/JobsPage.vue';
 import LoginPage from '@/pages/LoginPage.vue';
 import RegisterPage from '@/pages/RegisterPage.vue';
+import JobsDetailsPage from '@/pages/JobsDetailPage.vue';
 import { useAuthStore } from '@/stores/auth/auth';
 
 const router = createRouter({
@@ -24,7 +25,15 @@ const router = createRouter({
       meta: {
         title: 'Jobs',
         requiresAuth: true,
-        // requiresAuth: false, // vorerst false
+      },
+    },
+    {
+      path: '/jobs/:id',
+      name: 'job-details',
+      component: JobsDetailsPage,
+      props: true,
+      meta: {
+        requiresAuth: true,
       },
     },
     {
