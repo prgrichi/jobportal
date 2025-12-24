@@ -1,14 +1,13 @@
 <template>
   <section class="py-12">
     <div class="max-w-app mx-auto px-4">
-      <h1 class="text-2xl font-semibold text-neutral-900">Übersicht</h1>
-      <Jobs :jobs="jobs" :isLoading="isLoading" :error="error"></Jobs>
+      <h1 class="text-2xl font-semibold text-neutral-900 mb-6">Übersicht</h1>
+      <Jobs />
     </div>
   </section>
 </template>
 
 <script>
-import jobsMixin from '@/mixins/jobsMixin';
 import Jobs from '@/components/jobs/Jobs.vue';
 
 export default {
@@ -16,14 +15,6 @@ export default {
   components: {
     Jobs
   },
-  // job in mixins:
-  mixins: [jobsMixin],
-  created() {
-    this.fetchJobs({
-      orderBy: { field: 'createdAt', direction: 'desc' },
-      limit: 6
-    });
-  }
 }
 </script>
 

@@ -60,7 +60,9 @@ export default {
   },
   computed: {
     timeToDate() {
-      const date = this.job.createdAt ? this.job.createdAt.toDate() : new Date();
+      const date = this.job?.createdAt?.toDate() || null;
+      if (!date) return '';
+
       return date.toLocaleString('de-DE',
         {
           day: '2-digit',
