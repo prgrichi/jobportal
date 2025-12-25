@@ -21,12 +21,12 @@ export default {
       return useJobStore();
     }
   },
-  created() {
-    this.jobStore.fetchJobs({
-      orderBy: { field: 'createdAt', direction: 'desc' },
-      limit: 6
-    })
-  },
+  // created() {
+  //   this.jobStore.fetchJobs({
+  //     orderBy: { field: 'createdAt', direction: 'desc' },
+  //     limit: 3
+  //   })
+  // },
 
 }
 </script>

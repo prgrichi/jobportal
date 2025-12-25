@@ -193,7 +193,7 @@ export default {
       return this.jobStore.singleJob;
     },
     createdAtDE() {
-      const date = this.job.createdAt ? this.job.createdAt.toDate() : new Date();
+      const date = this.job.createdAt ? this.job.createdAt.toDate() : new Date(); 
       return date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
     },
     remoteLabel() {

@@ -5,9 +5,12 @@
     <article class="group rounded-2xl border border-neutral-200 bg-white p-5 transition
            hover:-translate-y-0.5 hover:shadow-lg hover:border-primary-500/30">
       <!-- Header -->
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <p class="text-xs text-neutral-500">{{ timeToDate }}</p>
+      <div class="flex items-start justify-between gap-3 w-full">
+        <div class="w-full">
+          <div class="flex justify-between gap-2 mb-1">
+            <p class="text-xs text-neutral-500">{{ timeToDate }}</p>
+            <p class="text-xs text-neutral-500">{{ job.id }}</p>
+          </div>
           <h3 class="text-sm font-semibold text-neutral-900">
             {{ job.title }}
           </h3>
