@@ -8,6 +8,10 @@
 
         <!-- Navigation -->
         <nav v-if="authReady" class="flex items-center gap-6 text-sm">
+          <p class="text-neutral-600 hover:text-neutral-900 transition after:content-['/'] after:ml-6"
+            v-if="authStore.isAuthenticated">Hallo, {{
+              authStore.userName }}</p>
+
           <RouterLink :to="{ name: 'jobs' }" class="text-neutral-600 hover:text-neutral-900 transition">Jobs
           </RouterLink>
 

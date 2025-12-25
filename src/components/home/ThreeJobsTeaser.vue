@@ -15,12 +15,16 @@
         </RouterLink>
       </div>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <template v-if="jobStore.isLoading">
+        <template v-if="!authStore.authReady || jobStore.isLoading">
           <JobSkeleton v-for="n in 3" :key="`sk-${n}`" />
         </template>
 
-        <template v-else>
+        <template v-else-if="authStore.isAuthenticated">
           <JobSingle v-for="job in jobStore.jobs" :key="job.id" :job="job" />
+        </template>
+
+        <template v-else>
+          <ThreeJobsTeaserPlaceholder v-for="n in 3" :key="n" />
         </template>
 
         <template v-if="jobStore.error">
@@ -46,19 +50,25 @@
 
 <script>
 import { useJobStore } from '@/stores/jobs/jobs';
+import { useAuthStore } from '@/stores/auth/auth';
 import JobSingle from '@/components/jobs/JobSingle.vue';
 import JobSkeleton from "@/components/jobs/JobSkeleton.vue";
+import ThreeJobsTeaserPlaceholder from "@/components/home/ThreeJobsTeaserPlaceholder.vue";
 
 export default {
   name: 'ThreeJobsTeaser',
   components: {
     JobSingle,
-    JobSkeleton
+    JobSkeleton,
+    ThreeJobsTeaserPlaceholder
   },
   computed: {
     jobStore() {
       return useJobStore();
-    }
+    },
+    authStore() {
+      return useAuthStore();
+    },
   },
   created() {
     this.jobStore.fetchJobs({

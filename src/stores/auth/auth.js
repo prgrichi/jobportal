@@ -10,6 +10,11 @@ export const useAuthStore = defineStore('auth', {
 
   getters: {
     isAuthenticated: state => !!state.user,
+    userName: state => {
+      if (!state.user) return 'Gast';
+      return state.user.email?.split('@')[0] ||
+        'Gast';
+    }
   },
 
   actions: {
