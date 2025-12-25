@@ -100,7 +100,7 @@ export default {
         if (this.mode === 'register') {
           await createUserWithEmailAndPassword(auth, values.email, values.password);
           this.toast.success('Registrierung erfolgreich!');
-          this.$router.push({ name: 'login' });
+          this.$router.push({ name: 'home' });
         } else {
           await signInWithEmailAndPassword(auth, values.email, values.password);
           this.toast.success('Login erfolgreich!');
