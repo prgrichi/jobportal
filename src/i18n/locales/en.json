@@ -1,35 +1,109 @@
 {
+  "general": {
+    "btn": {
+      "jobs": "View jobs",
+      "signInNow": "Sign in now",
+      "registerNow": "Register now",
+      "signIn": "Sign in",
+      "register": "Register",
+      "registerAccount": "Create account",
+      "logout": "Logout",
+      "login": "Login",
+      "github": "View on Github",
+      "loadJobs": "Load more jobs",
+      "apply": "Apply",
+      "save": "Save",
+      "ui": {
+        "creatingAccount": "Creating account...",
+        "createAccount": "Create account",
+        "signingIn": "Signing in...",
+        "signIn": "Sign in"
+      }
+    }
+  },
   "nav": {
-    "userGreeting": "Hallo",
+    "userGreeting": "Hello",
     "link": {
-      "homepage": "Jobportal",
+      "homepage": "Job Portal",
       "job": "Jobs",
       "login": "Login",
-      "register": "Registrieren",
+      "register": "Register",
       "logout": "Logout"
     }
   },
   "footer": {
-    "projectTitle": "Jobportal",
-    "projectSubTitle": "Portfolio-Projekt",
+    "projectTitle": "Job Portal",
+    "projectSubTitle": "Portfolio Project",
     "link": {
-      "homepage": "Start",
+      "homepage": "Home",
       "login": "Login",
       "jobs": "Jobs"
     }
   },
-  "general": {
-    "btn": {
-      "jobs": "Jobs ansehen",
-      "signInNow": "Jetzt anmelden",
-      "registerNow": "Jetzt registrieren",
-      "signIn": "Anmelden",
-      "register": "Registrieren",
-      "logout": "Logout",
-      "github": "Github ansehen",
-      "loadJobs": "Mehr Jobs laden",
-      "apply": "Bewerben",
-      "save": "Speichern"
+  "threejobsteaser": {
+    "title": "Latest Jobs",
+    "subtitle": "3 current frontend & web roles.",
+    "viewAll": "All jobs",
+    "placeholder": {
+      "locked": "Locked",
+      "text": "Sign in to view this job"
     }
+  },
+  "auth": {
+    "general": {
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "placeholder": {
+        "email": "Enter your email",
+        "password": "Enter your password",
+        "confirmPassword": "Confirm your password"
+      }
+    },
+    "login": {
+      "title": "Login",
+      "subTitle": "Sign in to view saved jobs."
+    },
+    "register": {
+      "title": "Register",
+      "subTitle": "Create an account to save jobs."
+    }
+  },
+  "errors": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "passwordRequired": "Password is required",
+    "paswordLength": "Password must be at least 6 characters long",
+    "logoutError": "Error logging out. Please try again.",
+    "loginError": "Error logging in. Please check your credentials.",
+    "registerError": "Error during registration. Please try again.",
+    "passwordMismatch": "Passwords do not match.",
+    "confirmPassword": "Please confirm your password",
+    "invalidCredentials": "The credentials are invalid.",
+    "emailAlreadyInUse": "This email address is already in use."
+  },
+  "toast": {
+    "loginSuccess": "Successfully logged in.",
+    "logoutSuccess": "Successfully logged out.",
+    "registerSuccess": "Account created successfully."
+  },
+  "jobs": {
+    "headline": "Available Jobs",
+    "filter": {
+      "headline": "Filter",
+      "inputPlaceholder": "Job, company or keyword..."
+    },
+    "jobsNotFound": "No jobs found.",
+    "ui": {
+      "loadMore": "Load more jobs",
+      "loading": "Loading..."
+    },
+    "allLoaded": "All {count} jobs loaded",
+    "details": "Details"
+  },
+  "hero": {
+    "title": "A Modern Job Board as a Portfolio Project",
+    "subtitle": "Job Portal Demo",
+    "description": "A minimal job board as a practice and portfolio project, developed with a focus on clarity over feature completeness."
   }
 }

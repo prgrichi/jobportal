@@ -24,7 +24,7 @@
   "nav": {
     "userGreeting": "Hallo",
     "link": {
-      "homepage": "Jobportal",
+      "homepage": "Job Portal",
       "job": "Jobs",
       "login": "Login",
       "register": "Registrieren",
@@ -100,5 +100,10 @@
     },
     "allLoaded": "Alle {count} Jobs geladen",
     "details": "Details"
+  },
+  "hero": {
+    "title": "Eine moderne Jobbörse als Portfolio-Projekt",
+    "subtitle": "Jobportal Demo",
+    "description": "Eine reduzierte Jobbörse als Übungs- und Portfolio-Projekt, entwickelt mit Fokus auf Klarheit statt Funktionsfülle."
   }
 }

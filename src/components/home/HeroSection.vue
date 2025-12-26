@@ -4,17 +4,15 @@
 
       <div class="max-w-2xl">
         <p class="mb-3 text-sm uppercase tracking-wider text-primary-600">
-          Jobportal Demo
+          {{ $t('hero.subtitle') }}
         </p>
 
-        <h1 class="text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
-          Eine moderne Jobbörse<br class="hidden sm:block" />
-          als Portfolio-Projekt
+        <h1 class="text-balance text-3xl font-semibold tracking-tight text-neutral-900 md:text-4xl">
+          {{ $t('hero.title') }}
         </h1>
 
         <p class="text-balance mt-5 text-base text-neutral-600 leading-relaxed">
-          Eine reduzierte Jobbörse als Übungs- und Portfolio-Projekt,
-          entwickelt mit Fokus auf Klarheit statt Funktionsfülle.
+          {{ $t('hero.description') }}
         </p>
 
         <div class="mt-8 flex flex-wrap gap-4">
@@ -23,14 +21,14 @@
                         bg-primary-500 px-6 py-3
                         text-sm font-medium text-white
                         transition hover:bg-primary-600
-                        focus:outline-none focus:ring-2 focus:ring-primary-500/30">Jobs ansehen</RouterLink>
+                        focus:outline-none focus:ring-2 focus:ring-primary-500/30">{{ $t('general.btn.jobs') }}</RouterLink>
 
           <a href="https://github.com/prgrichi/jobportal" rel="noopener noreferrer" target="_blank" class="inline-flex items-center justify-center rounded-xl
                         border border-neutral-300 bg-white px-6 py-3
                         text-sm font-medium text-neutral-700
                         transition hover:bg-neutral-100
                         focus:outline-none focus:ring-2 focus:ring-neutral-300">
-            GitHub ansehen
+            {{ $t('general.btn.github') }}
           </a>
         </div>
       </div>
