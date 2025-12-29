@@ -34,6 +34,15 @@
         <!-- Navigation -->
         <nav v-if="authReady" aria-label="Hauptnavigation" class="flex items-center gap-6 text-sm">
 
+          <RouterLink :to="{ name: 'favoriteJobs' }"  v-if="isAuthenticated" 
+            class="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-900 transition">
+            Meine Jobs
+            <span v-if="favoritesStore.favoriteCount > 0"
+              class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-primary-500 text-[11px] font-semibold text-white">
+              {{ favoritesStore.favoriteCount }}
+            </span>
+          </RouterLink>
+
           <RouterLink :to="{ name: 'jobs' }" class="text-neutral-600 hover:text-neutral-900 transition">
             {{ $t('nav.link.job') }}
           </RouterLink>
@@ -62,6 +71,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '@/config/firebase';
 import { useToastStore } from '@/stores/toast/toast';
 import { useAuthStore } from '@/stores/auth/auth';
+import { useFavoritesStore } from '@/stores/jobs/favorites';
 
 export default {
   name: 'TheHeader',
@@ -79,6 +89,12 @@ export default {
     },
     authReady() {
       return this.authStore.authReady;
+    },
+    favoritesStore() {
+      return useFavoritesStore();
+    },
+    getFavoriteJobsNumber() {
+      return this.favoritesStore.favoriteJobs.length;
     },
     currentLocale() {
       return this.$i18n.locale;
