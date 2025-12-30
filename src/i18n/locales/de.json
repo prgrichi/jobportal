@@ -13,6 +13,7 @@
       "loadJobs": "Mehr Jobs laden",
       "apply": "Bewerben",
       "save": "Speichern",
+      "jobSearch": "Jobs durchsuchen",
       "ui": {
         "creatingAccount": "Konto wird erstellt...",
         "createAccount": "Konto erstellen",
@@ -106,7 +107,11 @@
     "allLoaded": "Alle {count} Jobs geladen",
     "details": "Details",
     "favorites": {
-      "count": "Gespeicherte Jobs: {count}"
+      "title": "Meine Jobs",
+      "count": "Du hast keine gespeicherten Jobs | Gespeicherte Jobs: {n} | Gespeicherte Jobs: {n}",
+      "favoritesLoading": "Lade gespeicherten Jobs...",
+      "noFavoritesTitle": "Du hast noch keine gespeicherten Jobs.",
+      "noFavoritesText": "Speichere Jobs, um sie später wiederzufinden."
     }
   },
   "hero": {

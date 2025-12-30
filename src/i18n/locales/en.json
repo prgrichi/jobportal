@@ -13,6 +13,7 @@
       "loadJobs": "Load more jobs",
       "apply": "Apply",
       "save": "Save",
+      "jobSearch": "Browse jobs",
       "ui": {
         "creatingAccount": "Creating account...",
         "createAccount": "Create account",
@@ -103,7 +104,11 @@
     "allLoaded": "All {count} jobs loaded",
     "details": "Details",
     "favorites": {
-      "count": "Saved Jobs: {count}"
+      "title": "My Jobs",
+      "count": "No saved jobs yet | {n} saved job | {n} saved jobs",
+      "favoritesLoading": "Loading your saved jobs...",
+      "noFavoritesTitle": "Nothing saved yet",
+      "noFavoritesText": "Bookmark jobs to view them here later."
     }
   },
   "hero": {
