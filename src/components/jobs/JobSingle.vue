@@ -1,53 +1,54 @@
-<!-- @click="saveToStore" in routerlink -->
-
 <template>
+  <article class="w-full relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 transition-all duration-300 hover:shadow-sm
+                  flex flex-col">
 
-  <article class="block w-full relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 transition-all duration-300
-         hover:shadow-sm">
-    <!-- Header -->
-    <div class="flex items-start justify-between gap-4">
-      <div class="flex-1">
-        <div class="flex items-center gap-2 mb-2">
+    <div class="flex flex-col flex-1">
+      <div class="flex items-start justify-between gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-2">
+            <span
+              class="inline-flex items-center rounded-md bg-primary-50 pr-2 py-1 text-xs font-medium text-primary-700">
+              {{ job.level }}
+            </span>
+            <span class="text-xs text-neutral-400">{{ timeToDate }}</span>
+          </div>
+
+          <RouterLink :to="`/jobs/${job.id}`" class="flex w-full">
+            <h3 class="text-lg font-semibold text-neutral-900 transition-colors">
+              {{ job.title }}
+            </h3>
+          </RouterLink>
+
+          <div class="mt-2 flex items-center gap-2 text-sm">
+            <span class="font-medium text-neutral-800">{{ job.company }}</span>
+            <span class="h-1 w-1 rounded-full bg-neutral-300"></span>
+            <span class="text-neutral-600">{{ job.location }}</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm my-5 flex-1">{{ job.description }}</p>
+
+      <!-- Tags -->
+      <div v-if="job.tags?.length" class="flex flex-wrap gap-2"> <!-- ← mt-4 entfernt -->
+        <span v-for="tag in job.tags.slice(0, 6)" :key="tag"
+          class="rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors">
+          {{ tag }}
+        </span>
+      </div>
+
+      <div class="inline-flex group/star items-center gap-2 mt-4">
+        <button @click="toggleFavorite" class="inline-flex items-center gap-1.5 cursor-pointer">
+          <Icon name="Star" :type="starType" :icon-class="starIconClass" />
           <span
-            class="inline-flex items-center rounded-md bg-primary-50 pr-2 py-1 text-xs font-medium text-primary-700">
-            {{ job.level }}
+            class="text-sm text-primary-500 transition-all duration-150 group-hover/star:underline group-hover/star:underline-offset-4">
+            Merken
           </span>
-          <span class="text-xs text-neutral-400">{{ timeToDate }}</span>
-        </div>
-
-        <RouterLink :to="`/jobs/${job.id}`" class="flex w-full">
-          <h3 class="text-lg font-semibold text-neutral-900 transition-colors">
-            {{ job.title }}
-          </h3>
-        </RouterLink>
-
-        <div class="mt-2 flex items-center gap-2 text-sm">
-          <span class="font-medium text-neutral-800">{{ job.company }}</span>
-          <span class="h-1 w-1 rounded-full bg-neutral-300"></span>
-          <span class="text-neutral-600">{{ job.location }}</span>
-        </div>
+        </button>
       </div>
     </div>
 
-    <p class="text-sm my-5">{{ job.description }}</p>
-
-    <!-- Tags -->
-    <div v-if="job.tags?.length" class="mt-4 flex flex-wrap gap-2">
-      <span v-for="tag in job.tags.slice(0, 6)" :key="tag"
-        class="rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors">
-        {{ tag }}
-      </span>
-    </div>
-
-    <div class="inline-flex group/star items-center gap-2 mt-4">
-      <button @click="toggleFavorite" class="inline-flex items-center gap-1.5 cursor-pointer">
-        <Icon name="Star" :type="starType" :icon-class="starIconClass" />
-        <span
-          class="text-sm text-primary-500 transition-all duration-150 group-hover/star:underline group-hover/star:underline-offset-4">Merken</span>
-      </button>
-    </div>
   </article>
-
 </template>
 
 <script>
