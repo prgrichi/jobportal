@@ -3,8 +3,7 @@
 <template>
 
   <article class="block w-full relative overflow-hidden rounded-lg border border-neutral-200 bg-white p-6 transition-all duration-300
-         hover:shadow-sm hover:border-primary-500/30
-         ">
+         hover:shadow-sm">
     <!-- Header -->
     <div class="flex items-start justify-between gap-4">
       <div class="flex-1">
@@ -47,11 +46,6 @@
           class="text-sm text-primary-500 transition-all duration-150 group-hover/star:underline group-hover/star:underline-offset-4">Merken</span>
       </button>
     </div>
-
-    <!-- <div v-if="job.salaryRange" class="text-left mt-4 border-t pt-4 border-neutral-200">
-        <p class="text-sm font-semibold text-neutral-900">{{ job.salaryRange }}</p>
-      </div> -->
-
   </article>
 
 </template>
