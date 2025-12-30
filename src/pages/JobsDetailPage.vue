@@ -1,7 +1,7 @@
 <template>
 
   <div class="w-full block text-center mt-6" v-if="jobStore.isLoading">Lädt... </div>
-  <div v-else-if="jobStore.error">{{ job.error }}</div>
+  <div v-else-if="jobStore.error">{{ jobStore.error }}</div>
   <div v-else-if="job">
 
     <div class="min-h-screen bg-gray-50">
@@ -213,7 +213,7 @@ export default {
 
   async created() {
     const jobId = this.id;
-    await this.jobStore.fetchJobById(jobId);
+    await this.jobStore.fetchJobByIdWithCache(jobId); 
   },
 
 };
