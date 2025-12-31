@@ -14,13 +14,18 @@
       "apply": "Apply",
       "save": "Save",
       "jobSearch": "Browse jobs",
+      "edit": "Edit",
+      "cancel": "Cancel",
       "ui": {
         "creatingAccount": "Creating account...",
         "createAccount": "Create account",
         "signingIn": "Signing in...",
-        "signIn": "Sign in"
+        "signIn": "Sign in",
+        "saving": "Saving...",
+        "save": "Save"
       }
-    }
+    },
+    "loading": "Loading..."
   },
   "nav": {
     "userGreeting": "Hello",
@@ -88,7 +93,9 @@
   "toast": {
     "loginSuccess": "Successfully logged in.",
     "logoutSuccess": "Successfully logged out.",
-    "registerSuccess": "Account created successfully."
+    "registerSuccess": "Account created successfully.",
+    "profileSuccess": "Profile saved successfully!",
+    "profileError": "Error saving profile. Please try again."
   },
   "jobs": {
     "headline": "Available Jobs",
@@ -114,7 +121,8 @@
   },
   "profile": {
     "title": "Profile",
-    "subtitle": "Manage your personal information"
+    "subtitle": "Manage your personal information",
+    "editProfile": "Edit Profile"
   },
   "hero": {
     "title": "A Modern Job Board as a Portfolio Project",

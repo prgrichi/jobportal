@@ -14,13 +14,18 @@
       "apply": "Bewerben",
       "save": "Speichern",
       "jobSearch": "Jobs durchsuchen",
+      "edit": "Bearbeiten",
+      "cancel": "Abbrechen",
       "ui": {
         "creatingAccount": "Konto wird erstellt...",
         "createAccount": "Konto erstellen",
         "signingIn": "Anmelden...",
-        "signIn": "Anmelden"
+        "signIn": "Anmelden",
+        "saving": "Speichern...",
+        "save": "Speichern"
       }
-    }
+    },
+    "loading": "Lädt..."
   },
   "nav": {
     "userGreeting": "Hallo",
@@ -88,7 +93,9 @@
   "toast": {
     "loginSuccess": "Erfolgreich eingeloggt.",
     "logoutSuccess": "Erfolgreich ausgeloggt.",
-    "registerSuccess": "Konto erfolgreich erstellt."
+    "registerSuccess": "Konto erfolgreich erstellt.",
+    "profileSuccess": "Profil erfolgreich gespeichert!",
+    "profileError": "Fehler beim Speichern. Bitte versuche es erneut."
   },
   "jobs": {
     "headline": "Verfügbare Jobs",
@@ -117,7 +124,9 @@
   },
   "profile": {
     "title": "Profil",
-    "subtitle": "Verwalte deine persönlichen Informationen"
+    "subtitle": "Verwalte deine persönlichen Informationen",
+    "emptyField": "Nicht angegeben",
+    "editProfile": "Profil bearbeiten"
   },
   "hero": {
     "title": "Eine moderne Jobbörse als Portfolio-Projekt",
