@@ -124,6 +124,12 @@
     "subtitle": "Manage your personal information",
     "editProfile": "Edit Profile"
   },
+  "modal": {
+    "authRequired": {
+      "title": "Login Required",
+      "message": "Log in to access all features."
+    }
+  },
   "hero": {
     "title": "A Modern Job Board as a Portfolio Project",
     "subtitle": "Job Portal Demo",

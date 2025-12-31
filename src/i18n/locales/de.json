@@ -128,6 +128,12 @@
     "emptyField": "Nicht angegeben",
     "editProfile": "Profil bearbeiten"
   },
+  "modal": {
+    "authRequired": {
+      "title": "Anmeldung erforderlich",
+      "message": "Melde dich an, um alle Funktionen zu nutzen."
+    }
+  },
   "hero": {
     "title": "Eine moderne Jobbörse als Portfolio-Projekt",
     "subtitle": "Jobportal Demo",
