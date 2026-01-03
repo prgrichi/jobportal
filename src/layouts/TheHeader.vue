@@ -139,6 +139,7 @@ import { useAuthStore } from '@/stores/auth/auth';
 import { useFavoritesStore } from '@/stores/jobs/favorites';
 import { useModalStore } from '@/stores/ui/modal';
 import { useThemeStore } from '@/stores/ui/theme';
+import { useLocaleStore } from '@/stores/ui/locale';
 
 export default {
   name: 'TheHeader',
@@ -153,25 +154,23 @@ export default {
     authStore() {
       return useAuthStore();
     },
-
     isAuthenticated() {
       return this.authStore.isAuthenticated;
     },
-
     authReady() {
       return this.authStore.authReady;
     },
-
     favoritesStore() {
       return useFavoritesStore();
     },
-
     modalStore() {
       return useModalStore();
     },
-
     themeStore() {
       return useThemeStore();
+    },
+    localeStore() {
+      return useLocaleStore();
     },
 
     // Current i18n locale
@@ -212,6 +211,8 @@ export default {
     // Change language
     changeLang(lang) {
       this.$i18n.locale = lang;
+
+      this.localeStore.setLocale(lang);
     },
 
     // Handle user logout

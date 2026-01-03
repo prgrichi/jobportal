@@ -10,7 +10,7 @@ const messages = {
 // i18n Instanz erstellen
 const i18n = createI18n({
   legacy: true,
-  locale: 'de',
+  locale: localStorage.getItem('locale') || 'de',
   fallbackLocale: 'en',
   messages
 });
