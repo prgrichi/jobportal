@@ -1,6 +1,6 @@
 <template>
   <!-- Three Jobs Teaser Section -->
-  <section class="bg-background pt-5 pb-10 md:pt-10 md:pb-20">
+  <section class="bg-background mb-10 lg:mb-16 md:pt-10">
     <div class="mx-auto max-w-app px-4">
 
       <!-- Section Header -->
@@ -54,7 +54,7 @@
       <!-- Mobile:  View All Button -->
       <div class="mt-6 md:hidden">
         <RouterLink :to="{ name: 'jobs' }" class="inline-flex w-full items-center justify-center rounded-xl
-                 border-b-3 border-primary-500/30 bg-background px-4 py-3
+                 border border-primary-500 bg-background px-4 py-3
                  text-sm font-medium text-primary-600
                  transition hover:bg-primary-500/10
                  focus:outline-none focus:ring-2 focus:ring-primary-500/30">

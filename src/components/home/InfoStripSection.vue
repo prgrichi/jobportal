@@ -1,7 +1,7 @@
 <template>
   <!-- Info/Disclaimer Strip -->
-  <section class="bg-primary-50 border-y border-neutral-200">
-    <div class="max-w-app mx-auto px-4 py-20 text-center">
+  <section class="bg-primary-50 border-y border-neutral-200 mb-10 lg:mb-16 py-10 px-4">
+    <div class="max-w-app mx-auto text-center">
 
       <!-- Disclaimer Text -->
       <p class="mx-auto max-w-3xl text-base sm:text-lg text-foreground/80 leading-relaxed">

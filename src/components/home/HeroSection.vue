@@ -1,7 +1,7 @@
 <template>
   <!-- Hero Section -->
-  <section class="bg-background relative overflow-hidden">
-    <div class="mx-auto max-w-app px-4 py-16 md:py-24">
+  <section class="bg-background relative overflow-hidden mb-10 lg:mb-16 py-10">
+    <div class="mx-auto max-w-app px-4">
 
       <!-- Hero Content -->
       <div class="max-w-2xl">

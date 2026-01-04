@@ -1,7 +1,7 @@
 <template>
   <!-- Favorite Jobs Page -->
-  <section>
-    <div class="max-w-app mx-auto px-4">
+  <div>
+    <div class="max-w-app mx-auto">
 
       <!-- Page Header -->
       <div class="mb-8" v-if="favoritesFoundCount !== 0">
@@ -43,7 +43,7 @@
       </div>
 
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

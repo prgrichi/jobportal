@@ -46,7 +46,7 @@
     <!-- Main Navigation Bar -->
     <div class="mx-auto max-w-app flex justify-between md:block">
 
-      <div class="flex h-16 items-center px-4 w-full justify-between relative">
+      <div class="flex h-16 items-center w-full justify-between relative px-4">
 
         <!-- Logo / Home Link -->
         <RouterLink :to="{ name: 'home' }" class="text-sm font-semibold text-foreground">

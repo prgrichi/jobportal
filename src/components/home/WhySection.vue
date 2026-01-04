@@ -1,6 +1,6 @@
 <template>
   <!-- Why Section (Features) -->
-  <section class="py-12 md:py-20">
+  <section class="mb-10 lg:mb-16 pt-10">
     <div class="max-w-app mx-auto px-4">
 
       <div class="grid gap-12 md:grid-cols-2 lg:items-start">

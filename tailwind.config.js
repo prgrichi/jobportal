@@ -2,6 +2,7 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts}"],
   darkMode: 'selector',
   theme: {
+
     extend: {
       colors: {
         // === Einheitliche Grau-Palette ===

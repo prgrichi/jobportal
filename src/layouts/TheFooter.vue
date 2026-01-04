@@ -1,7 +1,7 @@
 <template>
   <!-- Site Footer -->
-  <footer class="border-t-4 border-primary-500/70 bg-background">
-    <div class="max-w-app mx-auto px-4 py-12">
+  <footer class="border-t-4 border-primary-500/70 bg-background py-10">
+    <div class="max-w-app mx-auto px-4">
 
       <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
 

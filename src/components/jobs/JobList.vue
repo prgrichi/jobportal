@@ -1,6 +1,6 @@
 <template>
   <!-- Job List Section -->
-  <section class="space-y-4">
+  <div class="space-y-4">
 
     <!-- Jobs Grid -->
     <div class="mt-6 grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -50,7 +50,7 @@
       {{ $t('jobs.jobsNotFound') }}
     </div>
 
-  </section>
+  </div>
 </template>
 
 <script>

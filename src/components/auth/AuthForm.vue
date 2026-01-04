@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 md:mt-6">
+  <div class="">
 
     <!-- Auth Form (Login/Register) -->
     <Form @submit="onSubmit" :validation-schema="schema" class="max-w-md mx-auto rounded-lg">

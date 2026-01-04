@@ -1,6 +1,6 @@
 <template>
   <!-- Tech Stack Section -->
-  <section class="py-20 bg-muted">
+  <section class="bg-muted mb-10 lg:mb-16 py-10">
     <div class="max-w-app mx-auto px-4">
 
       <!-- Section Header -->

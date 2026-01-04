@@ -1,6 +1,6 @@
 <template>
   <!-- Job Detail Header (Breadcrumb Navigation) -->
-  <header class="mx-auto max-w-app px-4 py-5">
+  <header class="mx-auto max-w-app">
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 
       <!-- Breadcrumb -->

@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-app mx-auto py-4 space-y-6">
-    <section class="rounded-xl border border-border bg-background p-4 sm:p-6">
+    <div class="rounded-xl border border-border bg-background p-4 sm:p-6">
 
       <!-- Header -->
       <div class="flex items-center gap-2 mb-4">
@@ -23,7 +23,7 @@
           @reset="resetAll" />
       </div>
 
-    </section>
+    </div>
   </div>
 </template>
 

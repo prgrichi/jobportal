@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <HeroSection />
-    <ThreeJobsTeaser />
-    <WhySection />
-    <InfoStripSection />
-    <TechStackSection />
-  </div>
+  <HeroSection />
+  <ThreeJobsTeaser />
+  <WhySection />
+  <InfoStripSection />
+  <TechStackSection />
 </template>
 
 <script>

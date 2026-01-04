@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <div class="max-w-app mx-auto px-4">
+  <div>
+    <div class="max-w-app mx-auto">
 
       <!-- Header -->
       <ProfileHeader :title="$t('profile.title')" :subtitle="$t('profile.subtitle')" />
@@ -25,7 +25,7 @@
       </div>
 
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
