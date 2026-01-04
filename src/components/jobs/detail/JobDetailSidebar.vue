@@ -29,7 +29,7 @@
       <!-- Apply Button -->
       <div class="mt-4 flex gap-2">
         <button type="button" class="btn btn-primary w-full" @click="$emit('apply')">
-          Bewerben
+          {{ $t('general.btn.apply') }}
         </button>
       </div>
 

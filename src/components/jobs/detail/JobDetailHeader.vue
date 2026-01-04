@@ -11,7 +11,7 @@
                  text-sm font-medium text-muted-foreground 
                  hover:bg-muted hover:text-foreground">
           <span aria-hidden="true">←</span>
-          Jobs
+          {{ $t('jobs.jobDetail.backLinkText') }}
         </RouterLink>
 
         <!-- Separator -->

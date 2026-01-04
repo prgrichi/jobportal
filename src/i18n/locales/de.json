@@ -126,6 +126,11 @@
       "favoritesLoading": "Lade gespeicherten Jobs...",
       "noFavoritesTitle": "Du hast noch keine gespeicherten Jobs.",
       "noFavoritesText": "Speichere Jobs, um sie später wiederzufinden."
+    },
+    "jobDetail": {
+      "ctaText1": "Interessiert?",
+      "ctaText2": "Bewerbe dich direkt oder speichere den Job für später.",
+      "backLinkText": "Zurück zu Jobs"
     }
   },
   "profile": {
@@ -138,6 +143,14 @@
     "authRequired": {
       "title": "Anmeldung erforderlich",
       "message": "Melde dich an, um alle Funktionen zu nutzen."
+    }
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Die Seite, die du suchst, existiert nicht oder wurde verschoben.",
+    "btn": {
+      "home": "Zur Startseite",
+      "back": "Zurück"
     }
   },
   "hero": {

@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen bg-muted">
+  <div class="min-h-screen bg-muted py-6 md:py-12">
 
     <!-- Loading State -->
     <div v-if="jobStore.isLoading" class="w-full block text-center mt-6">
-      Lädt...
+      {{ general.loading }}
     </div>
 
     <!-- Error State -->

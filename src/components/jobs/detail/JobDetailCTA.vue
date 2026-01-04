@@ -6,10 +6,10 @@
       <!-- CTA Text -->
       <div>
         <p class="text-sm font-semibold text-foreground">
-          Interessiert?
+          {{ $t('jobs.jobDetail.ctaText1') }}
         </p>
         <p class="mt-1 text-sm text-muted-foreground">
-          Bewerbe dich direkt oder speichere den Job für später.
+          {{ $t('jobs.jobDetail.ctaText2') }}
         </p>
       </div>
 
@@ -23,7 +23,7 @@
 
         <!-- Apply Button -->
         <button type="button" class="btn btn-primary" @click="$emit('apply')">
-          Bewerben
+          {{ $t('general.btn.apply') }}
         </button>
       </div>
 

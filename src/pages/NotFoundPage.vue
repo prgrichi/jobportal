@@ -5,20 +5,20 @@
         <p class="text-6xl font-bold text-primary-500">404</p>
 
         <h1 class="mt-4 text-2xl font-semibold text-foreground">
-          Seite nicht gefunden
+          {{ $t('notFound.title') }}
         </h1>
 
         <p class="mt-2 text-sm text-muted-foreground">
-          Die Seite, die du suchst, existiert nicht oder wurde verschoben.
+          {{ $t('notFound.text') }}
         </p>
 
         <div class="mt-6 flex justify-center gap-3">
           <RouterLink :to="{ name: 'home' }" class="btn btn-primary">
-            Zur Startseite
+            {{ $t('notFound.btn.home') }}
           </RouterLink>
 
           <button class="btn btn-secondary" @click="$router.back()">
-            Zurück
+            {{ $t('notFound.btn.back') }}
           </button>
         </div>
       </div>

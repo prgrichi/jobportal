@@ -32,7 +32,7 @@
     "userGreeting": "Hello",
     "link": {
       "homepage": "Job Portal",
-      "job": "Find job",
+      "job":  "Find job",
       "login": "Login",
       "register": "Register",
       "logout": "Logout",
@@ -69,13 +69,13 @@
         "confirmPassword": "Confirm your password"
       }
     },
-    "login":  {
+    "login": {
       "title": "Login",
       "subTitle": "Sign in to view saved jobs."
     },
-    "register": {
+    "register":  {
       "title": "Register",
-      "subTitle":  "Create an account to save jobs."
+      "subTitle": "Create an account to save jobs."
     }
   },
   "errors": {
@@ -126,13 +126,18 @@
       "favoritesLoading": "Loading your saved jobs.. .",
       "noFavoritesTitle": "You haven't saved any jobs yet.",
       "noFavoritesText": "Save jobs to find them again later."
+    },
+    "jobDetail": {
+      "ctaText1": "Interested? ",
+      "ctaText2": "Apply directly or save the job for later.",
+      "backLinkText": "Back to jobs"
     }
   },
   "profile": {
-    "title":  "Profile",
-    "subtitle":  "Manage your personal information",
+    "title": "Profile",
+    "subtitle": "Manage your personal information",
     "emptyField": "Not specified",
-    "editProfile":  "Edit Profile"
+    "editProfile": "Edit Profile"
   },
   "modal": {
     "authRequired": {
@@ -140,14 +145,22 @@
       "message": "Log in to access all features."
     }
   },
+  "notFound": {
+    "title":  "Page not found",
+    "text": "The page you're looking for doesn't exist or has been moved.",
+    "btn": {
+      "home": "Go to homepage",
+      "back": "Go back"
+    }
+  },
   "hero": {
     "title": "A Modern Job Board as a Portfolio Project",
     "subtitle": "Job Portal Demo",
-    "description": "A minimal job board as a practice and portfolio project, developed with a focus on clarity over feature completeness."
+    "description":  "A minimal job board as a practice and portfolio project, developed with a focus on clarity over feature completeness."
   },
   "why": {
     "label": "Why this portal?",
-    "title": "Reduced to the essentials",
+    "title":  "Reduced to the essentials",
     "description": "This job portal is intentionally kept lean: find, filter, and save jobs quickly – without ads, popups, or visual noise. The focus is on structure, user guidance, and clear content.",
     "features": {
       "relevantJobs": {
@@ -166,7 +179,7 @@
   },
   "disclaimer": {
     "text": "This job portal is a",
-    "projectType":  "practice and portfolio project",
+    "projectType": "practice and portfolio project",
     "demonstrates": "It demonstrates the use of modern frontend technologies like",
     "tech": {
       "vue": "Vue 3",
