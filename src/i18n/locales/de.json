@@ -146,6 +146,7 @@
         "lastName": "Nachname",
         "email": "E-Mail",
         "fileUpload": "Lebenslauf hochladen (pdf)",
+        "emailFromAccount": "Die E-Mail-Adresse wird aus deinem Konto übernommen.",
         "placeholder": {
           "salary": "z.B. 55.000",
           "firstName": "Vorname",
@@ -165,7 +166,8 @@
     "authRequired": {
       "title": "Anmeldung erforderlich",
       "message": "Melde dich an, um alle Funktionen zu nutzen."
-    }
+    },
+    "close": "Schließen"
   },
   "notFound": {
     "title": "Seite nicht gefunden",

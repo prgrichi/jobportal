@@ -1,6 +1,6 @@
 {
   "general": {
-    "btn":  {
+    "btn": {
       "jobs": "View jobs",
       "signInNow": "Sign in now",
       "registerNow": "Register now",
@@ -23,10 +23,12 @@
         "signingIn": "Signing in...",
         "signIn": "Sign in",
         "saving": "Saving...",
-        "save": "Save"
+        "save": "Save",
+        "sending": "Sending..."
       }
     },
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "required": "Required"
   },
   "nav": {
     "userGreeting": "Hello",
@@ -83,7 +85,7 @@
     "emailInvalid": "Invalid email address",
     "passwordRequired": "Password is required",
     "passwordLength": "Password must be at least 6 characters long",
-    "logoutError": "Error logging out. Please try again.",
+    "logoutError": "Error logging out.  Please try again.",
     "loginError": "Error logging in. Please check your credentials.",
     "registerError": "Error during registration. Please try again.",
     "passwordMismatch": "Passwords do not match.",
@@ -91,19 +93,21 @@
     "invalidCredentials": "The credentials are invalid.",
     "emailAlreadyInUse": "This email address is already in use.",
     "firstNameRequired": "First name is required",
-    "lastNameRequired": "Last name is required",
+    "lastNameRequired":  "Last name is required",
     "cvRequired": "CV is required",
     "fileSizeMax": "File must not exceed {0} MB",
-    "fileTypeAllowedPdf":  "Only PDF files are allowed"
+    "fileTypeAllowedPdf": "Only PDF files are allowed"
   },
   "toast": {
     "loginSuccess": "Successfully logged in.",
     "logoutSuccess": "Successfully logged out.",
     "registerSuccess": "Account created successfully.",
     "profileSuccess": "Profile saved successfully! ",
-    "profileError": "Error saving profile. Please try again."
+    "profileError": "Error saving profile. Please try again.",
+    "applicationSuccess": "Application successfully sent! ",
+    "applicationError": "Error sending application. Please try again."
   },
-  "jobs":  {
+  "jobs": {
     "headline": "Available Jobs",
     "filter": {
       "headline": "Filter",
@@ -128,7 +132,7 @@
     "favorites": {
       "title": "My Jobs",
       "count": "No saved jobs yet | Saved jobs: {n} | Saved jobs: {n}",
-      "favoritesLoading": "Loading your saved jobs.. .",
+      "favoritesLoading": "Loading your saved jobs...",
       "noFavoritesTitle": "You haven't saved any jobs yet.",
       "noFavoritesText": "Save jobs to find them again later."
     },
@@ -146,6 +150,7 @@
         "lastName": "Last name",
         "email": "Email",
         "fileUpload": "Upload CV (PDF)",
+        "emailFromAccount": "Email address from your account",
         "placeholder": {
           "salary": "e.g.  55,000",
           "firstName": "First name",
@@ -155,7 +160,7 @@
       }
     }
   },
-  "profile": {
+  "profile":  {
     "title": "Profile",
     "subtitle": "Manage your personal information",
     "emptyField": "Not specified",
@@ -164,8 +169,9 @@
   "modal": {
     "authRequired": {
       "title": "Login Required",
-      "message": "Log in to access all features."
-    }
+      "message":  "Log in to access all features."
+    },
+    "close": "Close modal"
   },
   "notFound": {
     "title":  "Page not found",
@@ -183,19 +189,19 @@
   "why": {
     "label": "Why this portal?",
     "title": "Reduced to the essentials",
-    "description": "This job portal is intentionally kept lean:  find, filter, and save jobs quickly – without ads, popups, or visual noise.  The focus is on structure, user guidance, and clear content.",
+    "description": "This job portal is intentionally kept lean:  find, filter, and save jobs quickly – without ads, popups, or visual noise. The focus is on structure, user guidance, and clear content.",
     "features": {
       "relevantJobs": {
         "title": "Relevant positions",
         "description": "Selected jobs from internal teams – no project acquisition or agency offers."
       },
-      "remoteFlexible": {
+      "remoteFlexible":  {
         "title": "Remote & flexible",
-        "description": "Remote and hybrid options are clearly marked."
+        "description":  "Remote and hybrid options are clearly marked."
       },
       "noDistraction": {
         "title": "No distractions",
-        "description":  "No ads, no tracking, no unnecessary elements."
+        "description": "No ads, no tracking, no unnecessary elements."
       }
     }
   },
@@ -208,7 +214,7 @@
       "pinia": "Pinia",
       "firebase": "Firebase"
     },
-    "and": "and",
+    "and":  "and",
     "inRealisticApp": "in a realistic application."
   },
   "techStack": {
@@ -217,7 +223,7 @@
     "description": "This job portal is designed as a practical portfolio project.  The stack focuses on maintainability, structure, and modern frontend workflows.",
     "items": {
       "vue": {
-        "title": "Vue 3",
+        "title":  "Vue 3",
         "description": "Component-based architecture for a clear UI structure."
       },
       "pinia": {
@@ -237,7 +243,7 @@
         "description": "Fast development setup with modern build pipeline."
       },
       "tailwind": {
-        "title":  "Tailwind CSS",
+        "title": "Tailwind CSS",
         "description": "Utility-first styling for a consistent, responsive UI."
       }
     }

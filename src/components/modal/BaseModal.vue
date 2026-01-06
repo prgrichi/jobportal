@@ -26,10 +26,9 @@
 
             <!-- Close Button -->
             <button type="button" @click="onClose"
-              class="absolute top-4 right-4 min-w-11 min-h-11 cursor-pointer flex items-center justify-center p-2.5"
-              aria-label="Modal schließen">
+              class="absolute top-4 right-4 min-w-11 min-h-11 cursor-pointer flex items-center justify-center p-2.5">
               <Icon name="XMark" type="outline" icon-class="h-7 w-7 lg:h-6 lg:w-6" />
-              <span class="sr-only">Schließen</span>
+              <span class="sr-only">{{ $t('modal.close') }}</span>
             </button>
 
             <!-- Modal Description -->
