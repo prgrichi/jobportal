@@ -10,7 +10,7 @@
 
     <template #content>
 
-      <Form novalidate :initial-values="initialValues" @submit="onSubmit" :validation-schema="schema"
+      <Form :initial-values="initialValues" @submit="onSubmit" :validation-schema="schema" v-slot="{ errors }"
         class="max-w-md mx-auto rounded-lg">
 
         <!-- first name field -->
@@ -20,10 +20,11 @@
             <span class="text-red-500" aria-hidden="true">* </span>
           </label>
           <Field as="input" required name="firstName" type="text" id="firstName" autocomplete="given-name"
-            class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-ring"
+            :aria-invalid="!!errors.firstName" :aria-describedby="errors.firstName ? 'firstName-error' : undefined"
             :placeholder="$t('jobs.application.general.placeholder.firstName')" />
           <ErrorMessage name="firstName" v-slot="{ message }">
-            <small class="text-red-500">{{ message }}</small>
+            <small id="firstName-error" class="text-red-500">{{ message }}</small>
           </ErrorMessage>
         </div>
 
@@ -34,10 +35,11 @@
             <span class="text-red-500" aria-hidden="true">* </span>
           </label>
           <Field as="input" required name="lastName" type="text" id="lastName" autocomplete="family-name"
-            class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-ring"
+            :aria-invalid="!!errors.lastName" :aria-describedby="errors.lastName ? 'lastName-error' : undefined"
             :placeholder="$t('jobs.application.general.placeholder.lastName')" />
           <ErrorMessage name="lastName" v-slot="{ message }">
-            <small class="text-red-500">{{ message }}</small>
+            <small id="lastName-error" class="text-red-500">{{ message }}</small>
           </ErrorMessage>
         </div>
 
@@ -48,12 +50,13 @@
             <span class="text-red-500" aria-hidden="true">* </span>
           </label>
           <Field as="input" readonly required name="email" type="text" id="email" autocomplete="email"
-            class="bg-muted cursor-not-allowed w-full border border-border rounded-md p-2 focus:outline-none focus:ring-0" />
+            class="bg-muted cursor-not-allowed w-full border border-border rounded-md p-2 focus:outline-none focus:ring-0"
+            :aria-describedby="'email-error'" />
           <p class="text-xs text-muted-foreground mt-1">
             {{ $t('jobs.application.general.emailFromAccount') }}
           </p>
           <ErrorMessage name="email" v-slot="{ message }">
-            <small class="text-red-500">{{ message }}</small>
+            <small id="email-error" class="text-red-500">{{ message }}</small>
           </ErrorMessage>
         </div>
 
@@ -63,10 +66,11 @@
             {{ $t('jobs.application.general.salary') }}
           </label>
           <Field as="input" name="salary" type="text" id="salary" autocomplete="off"
-            class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-ring"
+            :aria-invalid="!!errors.salary" :aria-describedby="errors.salary ? 'salary-error' : undefined"
             :placeholder="$t('jobs.application.general.placeholder.salary')" />
           <ErrorMessage name="salary" v-slot="{ message }">
-            <small class="text-red-500">{{ message }}</small>
+            <small id="salary-error" class="text-red-500">{{ message }}</small>
           </ErrorMessage>
         </div>
 
@@ -78,15 +82,17 @@
           </label>
           <Field name="cv" v-slot="{ handleChange, handleBlur }">
             <input id="cv" required type="file" accept=".pdf" @change="handleChange" @blur="handleBlur"
-              class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              :aria-invalid="!!errors.cv" :aria-describedby="errors.cv ? 'cv-error' : 'cv-help'"
+              class="w-full border bg-background border-border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-ring">
           </Field>
           <ErrorMessage name="cv" v-slot="{ message }">
-            <small class="text-red-500">{{ message }}</small>
+            <small id="cv-error" class="text-red-500">{{ message }}</small>
           </ErrorMessage>
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" disabled class="btn btn-primary w-full">
+        <!-- button is disabled because its just a demo project -->
+        <button type="submit" :aria-busy="isLoading" disabled class="btn btn-primary w-full">
           <span>Absenden</span>
         </button>
 

@@ -1,7 +1,7 @@
 <template>
 
   <!-- Auth Form (Login/Register) -->
-  <Form @submit="onSubmit" novalidate :validation-schema="schema" v-slot="{ errors }"
+  <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ errors }"
     class="max-w-md mx-auto rounded-lg mt-10">
 
     <!-- Email Field -->
