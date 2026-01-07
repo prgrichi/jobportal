@@ -71,6 +71,7 @@
       "password": "Password",
       "confirmPassword": "Confirm password",
       "showPassword": "Show password",
+      "hidePassword": "Hide password",
       "placeholder": {
         "email": "Enter your email",
         "password": "Enter your password",

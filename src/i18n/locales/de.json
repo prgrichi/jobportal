@@ -68,11 +68,12 @@
       "email": "E-Mail",
       "password": "Passwort",
       "confirmPassword": "Passwort bestätigen",
+      "hidePassword": "Passwort verbergen",
       "showPassword": "Passwort anzeigen",
       "placeholder": {
         "email": "Gib deine E-Mail ein",
-        "password": "Gib dein Passwort ein",
-        "confirmPassword": "Bestätige dein Passwort"
+        "password": "Passwort eingeben",
+        "confirmPassword": "Passwort bestätigen"
       }
     },
     "login": {
