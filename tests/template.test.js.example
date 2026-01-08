@@ -1,0 +1,63 @@
+// tests/components/Testcomponent.test.js
+
+import { describe, it, expect } from 'vitest'
+import { mount } from '@vue/test-utils'
+import Testcomponent from '@/components/Testcomponent.vue'
+
+describe('Testcomponent', () => {
+  
+  it('rendert was', () => {
+    const wrapper = mount(Testcomponent, {
+      props: { /* deine props */ }
+    })
+    
+    expect(wrapper.find('Testcomponent').exists()).toBe(true)
+  })
+  
+  it('macht was wenn man klickt', async () => {
+    const wrapper = mount(Testcomponent)
+    
+    await wrapper.find('button').trigger('click')
+    
+    expect(wrapper.emitted('event')).toBeTruthy()
+  })
+})
+
+// Nützliche Wrapper Methoden:
+1.   wrapper.html()              // Debug: Was wird gerendert?
+2.  wrapper.text()              // Text-Inhalt checken
+3.  wrapper.find('selector')    // Element finden
+4.  wrapper.findAll('selector') // Alle Elemente
+5.  wrapper.exists()            // Existiert? 
+6.  wrapper.trigger('click')    // Click simulieren
+7.  wrapper.emitted('event')    // Event geprüft? 
+8.  wrapper.classes()           // CSS Klassen
+9.  wrapper.vm                  // Vue Internals
+10. wrapper.props('name')       // Prop Wert
+
+// FINDEN: 
+.find()       // CSS Selector
+.findAll()    // Alle
+.get()        // Wie find(), aber wirft Error
+
+// CHECKEN:
+.exists()     // Gibt's? 
+.text()       // Text
+.html()       // HTML
+.classes()    // CSS Klassen
+.attributes() // HTML Attribute
+.toContain()  // String enthalten?
+
+// INTERAGIEREN:
+.trigger()    // Event
+.setValue()   // Input Wert setzen
+
+// VUE ZEUG:
+.vm           // Vue Instance
+.props()      // Props
+.emitted()    // Events
+
+// DEBUG:
+console.log(wrapper.html())
+console.log(wrapper.text())
+console.log(wrapper.vm)
