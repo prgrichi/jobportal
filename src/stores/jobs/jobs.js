@@ -1,6 +1,15 @@
 // stores/jobs/jobs.js
 import { defineStore } from 'pinia';
-import { collection, query, orderBy, startAfter, limit, getDocs, doc, getDoc } from 'firebase/firestore';
+import {
+  collection,
+  query,
+  orderBy,
+  startAfter,
+  limit,
+  getDocs,
+  doc,
+  getDoc,
+} from 'firebase/firestore';
 import { db } from '@/config/firebase';
 
 export const useJobStore = defineStore('jobs', {
@@ -19,10 +28,10 @@ export const useJobStore = defineStore('jobs', {
   }),
 
   getters: {
-    availableLocations(state) {
+    availableLocations(_state) {
       return this.getUniqueValues('location');
     },
-    availableLevels(state) {
+    availableLevels(_state) {
       return this.getUniqueValues('level');
     },
     filteredJobs(state) {
@@ -54,14 +63,12 @@ export const useJobStore = defineStore('jobs', {
       return {
         id: doc.id,
         jobNumber,
-        ...otherData
+        ...otherData,
       };
     },
 
     getUniqueValues(field) {
-      const values = this.jobs
-        .map(job => job[field])
-        .filter(Boolean);
+      const values = this.jobs.map(job => job[field]).filter(Boolean);
       return [...new Set(values)].sort();
     },
 
@@ -121,7 +128,7 @@ export const useJobStore = defineStore('jobs', {
       try {
         const q = this.buildQuery({
           ...options,
-          startAfter: this.lastVisible
+          startAfter: this.lastVisible,
         });
 
         const querySnapshot = await getDocs(q);
@@ -194,5 +201,5 @@ export const useJobStore = defineStore('jobs', {
       this.selectedLocation = '';
       this.selectedLevel = '';
     },
-  }
+  },
 });
