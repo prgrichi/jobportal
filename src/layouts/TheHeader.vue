@@ -46,6 +46,7 @@
               >
                 EN
               </button>
+              <button>FR</button>
             </nav>
           </div>
         </div>
