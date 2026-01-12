@@ -64,14 +64,26 @@
         <button
           v-if="authReady"
           @click="toggleMenu"
+          ref="burgerBtn"
+          :aria-expanded="mobileMenuOpen"
+          aria-controls="mobile-menu"
           class="md:hidden min-w-11 min-h-11 p-2 text-muted-foreground"
         >
-          <Icon :name="mobileMenuOpen ? 'XMark' : 'Bars3'" icon-class="h-6 w-6" />
+          <span class="sr-only">
+            {{ mobileMenuOpen ? $t('nav.closeMobileMenu') : $t('nav.openMobileMenu') }}
+          </span>
+          <Icon
+            aria-hidden="true"
+            :name="mobileMenuOpen ? 'XMark' : 'Bars3'"
+            icon-class="h-6 w-6"
+          />
         </button>
 
         <!-- Navigation Links -->
         <nav
           v-if="authReady"
+          ref="mobileMenu"
+          id="mobile-menu"
           aria-label="Hauptnavigation"
           :class="[
             'text-sm',
@@ -90,7 +102,7 @@
               <!-- Favorites Count Badge -->
               <span
                 v-if="favoritesStore.favoriteCount > 0"
-                class="ms-[5px] inline-flex items-center justify-center min-w-[20px] h-5 px-1. 5 rounded-full bg-primary-500 text-[11px] font-semibold text-white"
+                class="ms-[5px] inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-primary-500 text-[11px] font-semibold text-white"
               >
                 {{ favoritesStore.favoriteCount }}
               </span>
@@ -166,6 +178,7 @@ import { useModalStore } from '@/stores/ui/modal';
 import { useThemeStore } from '@/stores/ui/theme';
 import { useLocaleStore } from '@/stores/ui/locale';
 import ToggleSwitch from '@/components/ui/ToggleSwitch.vue';
+import { createFocusTrap } from '@/utils/focusTrap';
 
 export default {
   name: 'TheHeader',
@@ -175,6 +188,7 @@ export default {
   data() {
     return {
       mobileMenuOpen: false, // Mobile menu toggle state
+      focusTrap: null, // Focus trap instance
     };
   },
 
@@ -223,7 +237,6 @@ export default {
     deClasses() {
       return this.currentLocale === 'de' ? 'font-bold text-primary-600' : 'text-muted-foreground';
     },
-
     // English button classes (active/inactive)
     enClasses() {
       return this.currentLocale === 'en' ? 'font-bold text-primary-600' : 'text-muted-foreground';
@@ -234,6 +247,23 @@ export default {
       this.mobileMenuOpen = false;
     },
   },
+
+  mounted() {
+    this.focusTrap = createFocusTrap({
+      getFocusableElements: () => {
+        const menuLinks = Array.from(this.$refs.mobileMenu?.querySelectorAll('a, button') || []);
+        return [this.$refs.burgerBtn, ...menuLinks];
+      },
+      onClose: () => {
+        this.toggleMenu();
+      },
+    });
+  },
+
+  beforeUnmount() {
+    this.focusTrap?.destroy();
+  },
+
   methods: {
     // Toggle dark mode
     toggleDarkMode() {
@@ -243,6 +273,18 @@ export default {
     // Toggle mobile menu
     toggleMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen;
+
+      if (this.mobileMenuOpen) {
+        this.focusTrap.activate();
+        const firstLink = this.$refs.mobileMenu?.querySelector('a');
+        firstLink?.focus();
+      } else {
+        this.focusTrap.deactivate();
+        this.$nextTick(() => {
+          // Focus zurück auf Burger
+          this.$refs.burgerBtn?.focus();
+        });
+      }
     },
 
     // Change language
