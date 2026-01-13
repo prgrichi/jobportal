@@ -256,5 +256,9 @@
         "description": "Utility-first Styling für ein konsistentes, responsives UI."
       }
     }
+  },
+  "demo": {
+    "title": "Demo-Zugang verfügbar:",
+    "alternative": "Alternativ ist eine freie Registrierung möglich."
   }
 }

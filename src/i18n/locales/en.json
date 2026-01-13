@@ -260,5 +260,9 @@
         "description": "Utility-first styling for a consistent, responsive UI."
       }
     }
+  },
+  "demo": {
+    "title": "Demo access available:",
+    "alternative": "Alternatively, free registration is available."
   }
 }
