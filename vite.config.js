@@ -24,6 +24,7 @@ export default defineConfig({
         display: 'standalone',
         background_color: '#ffffff',
         theme_color: '#0f172a',
+        includeAssets: ['offline.html'],
         workbox: {
           navigateFallback: '/offline.html',
         },
